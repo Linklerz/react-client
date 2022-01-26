@@ -6,7 +6,7 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route exact path='/li/:userName' component={User} />
+                    <Route exact path='/li.:userName' component={User} />
                     <Route>
                         <div>Default page</div>
                     </Route>
