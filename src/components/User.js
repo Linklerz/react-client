@@ -5,7 +5,7 @@ const User = () => {
      const url = `https://lerz-api.herokuapp.com/api/links_json/${ userName }`;
 
         var linkDiv = document.getElementById('linkDiv');
-        
+
 
         fetch(url)
           .then((response) => {
@@ -32,6 +32,9 @@ const User = () => {
 
 
             });
+
+            linkDiv.id = `${userName}Links`;
+            
           })
           .catch(function(error) {
             console.log(error);
