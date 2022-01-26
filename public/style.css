@@ -24,6 +24,8 @@ img {
 .profile-name {
     text-align: center;
     padding: 30px;
+    top: 0%;
+    margin-bottom: 20px;
 }
 
 .links {
@@ -51,6 +53,7 @@ a {
     font-size: 20px;
     font-weight: bold;
     bottom: 0%;
+
 }
 
 a:hover {

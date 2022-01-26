@@ -1,49 +1,18 @@
-import React from "react";
-import './App.css';
-
-class App extends React.Component {
-
-    // Constructor
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            items: [],
-            DataisLoaded: false
-        };
-    }
-
-    // ComponentDidMount is used to
-    // execute the code
-    componentDidMount() {
-        fetch(
-"https://linklerz-api.cleverapps.io/api/links/sid86_")
-            .then((res) => res.json())
-            .then((json) => {
-                this.setState({
-                    items: json,
-                    DataisLoaded: true
-                });
-            })
-    }
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import User from './components/User';
+class App extends Component {
     render() {
-        const { DataisLoaded, items } = this.state;
-        if (!DataisLoaded) return <div>
-            <h1> Pleses wait some time.... </h1> </div> ;
-
         return (
-        <div className = "App">
-            <h1> Fetch data from an api in react </h1> {
-                items.map((item) => (
-                <ol key = { item.id } >
-                    Name: { item.name },
-                    Url : { item.url },
-                    </ol>
-                ))
-            }
-        </div>
-    );
+            <Router>
+                <Switch>
+                    <Route exact path='/li.:userName' component={User} />
+                    <Route>
+                        <div>Default page</div>
+                    </Route>
+                </Switch>
+            </Router>
+        );
+    }
 }
-}
-
 export default App;
