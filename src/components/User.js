@@ -12,7 +12,7 @@ const User = () => {
             return response.json();
           })
           .then((data) => {
-            console.log(data);
+            // console.log(data);
 
             let links = data;
 
